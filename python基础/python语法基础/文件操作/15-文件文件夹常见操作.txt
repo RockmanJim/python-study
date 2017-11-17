@@ -1,0 +1,20 @@
+import os
+之后，便可以使用Python OS的文件/目录方法了
+
+os.mkdir(path[, mode])
+以数字mode创建一个名为path的文件夹，默认mode是0777(八进制)
+返回：没有返回值
+
+os.rmdir(path)
+删除path指定的空目录，如果目录非空，则抛出一个OSError异常
+返回：没有返回值
+
+os.getcwd()
+返回当前工作目录
+
+os.chdir(path)
+改变当前工作目录
+返回：如果允许访问返回 True , 否则返回False
+
+os.listdir([path])
+返回path指定的文件夹包含的文件或文件夹的名字的列表
