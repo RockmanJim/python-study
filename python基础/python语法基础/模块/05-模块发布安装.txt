@@ -1,0 +1,27 @@
+#在包所在的路径，建立一个setup.py
+
+from distutils.core import setup
+
+setup(name="xsy", version="1.0", description="xsy's module", author="", py_modules=[])
+
+
+python3 setup.py build
+生成build文件夹
+
+python3 setup.py sdist
+生成dist文件夹和MANIFEST
+dist文件夹下面就有一个tar.gz生成
+
+tar -zxvf 解压缩
+
+进入到解压出来的文件夹
+python3 setup.py install
+
+然后就在
+linux:
+/usr/local/lib/python3.x/dist-packages/
+win:
+%PYTHON_HOME%\Lib\site-packages\xsy-1.0-py3.6.egg-info
+下面就有了信息
+
+下面就能直接import导入了

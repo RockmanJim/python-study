@@ -1,0 +1,18 @@
+什么是模块？
+就是个.py文件，有系统自带的，第三方的和自己定义的
+
+我们执行import random时，random就是一个模块
+
+可以用.__file__查看下random模块的位置
+UBANTU下
+In [1]: import random
+
+In [2]: random.__file__
+Out[2]: '/usr/lib/python3.5/random.py'
+
+
+WIN下
+In [6]: import random
+
+In [7]: random.__file__
+Out[7]: 'c:\\program files\\python36\\lib\\random.py'

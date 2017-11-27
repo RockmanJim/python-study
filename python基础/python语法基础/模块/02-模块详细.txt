@@ -1,0 +1,49 @@
+假设有sendmsg.py和recvmsg.py这俩文件，内容如下：
+sendmsg.py:
+
+def test1():
+	print("send test1")
+
+def test2():
+	print("send test2")
+	
+
+recvmsg.py:
+
+def test1():
+	print("recv test1")
+
+def test2():
+	print("recv test2")
+	
+
+这里需要import他们，使用它们之下的方法
+方法一：
+import sendmsg
+sendmsg.test1()
+sendmsg.test2()
+这么写，必须写sendmsg.
+
+方法二：
+from sendmsg import test1, test2
+test1()
+test2()
+这里就不用了sendmsg.
+
+如果要导入sendmsg下的全部方法，可以这么写
+from sendmsg import *
+但是存在风险，因为如果再导入一个
+from recvmsg import *
+其中也存在同名方法，后导入的会覆盖前面导入的同名方法，
+所以还是直接import sendmsg这种比较好
+
+
+import time as tt
+tt就是time的别名，tt.sleep(3)就相当于time.sleep(3)
+
+
+为了在每个py文件中做单元测试，可以用以下方式：
+if __name__ == '__main__':
+	main()
+
+__name__在当前文件中为__main__，如果是被调用，则会呈现为该文件的名字
