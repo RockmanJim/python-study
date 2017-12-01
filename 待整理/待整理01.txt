@@ -1,0 +1,56 @@
+软连接（相当于快捷方式）
+原文件删除，快捷方式就没用了
+ln -s 1.txt 1-softlink.txt
+#就是多个-s
+
+
+
+硬链接
+因为多了个连接，所以删除原文件也没事
+ln 1.txt 1-softlink.txt
+
+#可以通过ls -l以行来显示文件列表，从列表中可以看到其硬链接数
+
+cat
+显示1.txt
+cat 1.txt
+把俩文件和起来显示
+cat 1.txt 2.txt
+
+
+查看1.txt中包含ntfs的行
+grep "ntfs" 1.txt
+
+查看1.txt中包含ntfs的行（顺带显示行号）
+grep -n "ntfs" 1.txt
+
+查看1.txt中不包含ntfs的行
+grep -v "ntfs" 1.txt
+
+查看1.txt中开头是ntfs的行
+grep "^ntfs" 1.txt
+
+查看1.txt中结尾是ntfs的行
+grep "ntfs$" 1.txt
+
+cp
+
+
+mv
+把1.txt剪切到某文件夹下
+mv 1.txt laowang/
+也可重命名
+mv laowang/ gebilaowang
+mv 1-softlink.txt 1--softlink.txt
+
+cp
+把1.txt拷贝一份，名为2.txt
+cp 1.txt 2.txt
+这里有个小注意点，如果写成
+cp 1.txt A
+如果有A文件夹，就会在A文件夹下面再生成一个1.txt，如果没有，就会生成一个A的文件，就成了把1.txt复制一份，名为A了
+cp 1.txt A/
+这样就歧义了，就真的是在A文件夹下面再生成一个1.txt
+
+复制文件夹，要加-r才能强行复制，这里B加不加/都没歧义
+cp A B -r
